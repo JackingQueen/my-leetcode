@@ -1,7 +1,5 @@
 package org.jtznenic.solution;
 
-import java.util.Objects;
-
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 求和表头
@@ -45,52 +43,10 @@ public class AddTwoNumbers {
     }
 }
 
-
 class ListNode {
     int val;
     ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(val);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        boolean flag = false;
-        if (obj == null) {
-            flag = false;
-        }
-
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof ListNode)) {
-            return false;
-        }
-        ListNode other = (ListNode) obj;
-
-        if (this.next == null && other.next == null) {
-            flag = true;
-        }
-
-        if (other.next != null && this.next == null) {
-            flag = false;
-        }
-        return this.val == other.val
-            && flag
-            && this.next != null ? this.next.equals(other.next) : true;
-    }
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
