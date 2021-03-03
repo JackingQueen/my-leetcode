@@ -21,6 +21,7 @@ public class AddTwoNumbersTest {
         ListNode expected = this.buildListNode(7, 0, 8);
 
         this.testAddTwoNumbers(l1, l2, expected);
+        this.testAddTwoNumbers2(l1, l2, expected);
     }
 
     @Test
@@ -30,6 +31,7 @@ public class AddTwoNumbersTest {
         ListNode expected = this.buildListNode(0);
 
         this.testAddTwoNumbers(l1, l2, expected);
+        this.testAddTwoNumbers2(l1, l2, expected);
     }
 
     @Test
@@ -39,10 +41,19 @@ public class AddTwoNumbersTest {
         ListNode expected = this.buildListNode(8,9,9,9,0,0,0,1);
 
         this.testAddTwoNumbers(l1, l2, expected);
+        this.testAddTwoNumbers2(l1, l2, expected);
     }
 
     public void testAddTwoNumbers(ListNode l1, ListNode l2, ListNode expected) {
         ListNode result = new AddTwoNumbers().addTwoNumbers(l1, l2);
+        Integer[] actual = this.toValList(result);
+        Integer[] expectedList = this.toValList(expected);
+
+        assertThat(actual, equalTo(expectedList));
+    }
+
+    public void testAddTwoNumbers2(ListNode l1, ListNode l2, ListNode expected) {
+        ListNode result = new AddTwoNumbers().addTwoNumbers2(l1, l2);
         Integer[] actual = this.toValList(result);
         Integer[] expectedList = this.toValList(expected);
 
